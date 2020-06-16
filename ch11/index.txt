@@ -1,7 +1,0 @@
-STL标准模板库
-
-accumulate函数使用，顺序表操作
-
-copy函数使用，拷贝顺序表
-
-collection，集合相关

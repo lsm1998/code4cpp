@@ -1,7 +1,0 @@
-基本API
-
-input 读取键盘输入；
-random 生成随机数；
-date 时间戳基本使用；
-math 数学函数；
-string 字符串使用；
