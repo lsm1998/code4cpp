@@ -2,6 +2,14 @@
 #define CODE4CPP_MAIN_H
 
 #include "utils/utils.h"
+#include <windows.h>
+
+void ch01(HINSTANCE hInstance,
+          HINSTANCE hPrevInstance,
+          LPSTR lpCmdLine,
+          int nCmdShow);
+
+void ch02();
 
 int thread();
 
