@@ -3,32 +3,6 @@
 
 #include "utils/utils.h"
 
-void sort();
-
-void algorithm();
-
-void ch01();
-
-void ch02();
-
-void ch03();
-
-void ch04();
-
-void ch05();
-
-void ch06();
-
-void ch07();
-
-void ch08();
-
-void ch09();
-
-void ch10();
-
-void ch11();
-
 int thread();
 
 void start_socket();

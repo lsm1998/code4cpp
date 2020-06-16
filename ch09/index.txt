@@ -1,4 +1,0 @@
-多态
-
-纯虚函数与抽象；
-类型转换，dynamic_cast和static_cast；
