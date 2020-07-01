@@ -3,13 +3,11 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char * argv[])
 {
     cout << "Hello, World!" << endl;
-    cout << "Äã" << "Åä" << "Âð£¿" << endl;
+    cout << "ä½ " << "é…" << "å—ï¼Ÿ" << endl;
     cout << 0xFF << endl;
-    algorithm();
-    // WinExec("notepad.exe", SW_SHOW);
-    // system(R"(notepad.exe C:\Users\Administrator\Desktop\Dust\Stone.iml)");
+    ch01();
     return 0;
 }
