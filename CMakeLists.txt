@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(code4cpp
         main.cpp main.h
         ch01/ch01.h ch01/ch01.cpp ch01/demo.cpp ch01/sync.cpp
-        ch02/ch02.h ch02/ch02.cpp ch02/read.cpp
+        ch02/ch02.h ch02/ch02.cpp ch02/read.cpp ch02/base.cpp
         ch03/ch03.h ch03/ch03.cpp
         ch04/ch04.h ch04/ch04.cpp ch04/curd.cpp)
 
