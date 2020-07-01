@@ -3,4 +3,6 @@
 
 void ch01();
 
+void ch02();
+
 #endif

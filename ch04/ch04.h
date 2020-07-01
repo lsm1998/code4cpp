@@ -1,0 +1,4 @@
+#ifndef CODE4CPP_CH04_H
+#define CODE4CPP_CH04_H
+
+#endif //CODE4CPP_CH04_H
