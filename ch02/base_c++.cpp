@@ -9,6 +9,7 @@ void read_file_2(const string &filePath)
 {
     ifstream input;
     input.open(filePath);
+
     string content;
     if (!input.is_open())
     {

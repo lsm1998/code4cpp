@@ -1,8 +1,8 @@
 # Linux
 
-windows只适合玩玩，真正做东西的还得是linux
+Windows只适合玩玩，真正做东西的还得是Linux
 
-环境使用远程的linux，编码由GBK切换为UTF8，关于clion远程环境配置：
+环境使用远程的Linux，编码使用UTF8，关于clion远程环境配置：`https://encrt.com/2018/12/12/clion-远程编译调试/`
 
 47.103.211.234
 
