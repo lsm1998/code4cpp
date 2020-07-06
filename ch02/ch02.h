@@ -19,4 +19,6 @@ void open_dir(const string &path);
 
 char *read_bytes(const string &filePath);
 
+void file_fd();
+
 #endif //CODE4CPP_CH02_H
