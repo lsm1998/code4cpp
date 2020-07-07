@@ -7,9 +7,13 @@ void linux_file_wr(const int &fd);
 
 void linux_file_stat(const int &fd);
 
+void linux_file_lock(const string &filePath);
+
 void ch02()
 {
     linux_open("/app/123.txt");
+
+    linux_file_lock("/app/123.txt");
 }
 
 /**
@@ -66,4 +70,36 @@ void linux_file_stat(const int &fd)
     cout << st.st_blksize << endl;
     cout << st.st_gid << endl;
     cout << st.st_size << endl;
+}
+
+/**
+ * 文件锁
+ * @param filePath
+ */
+void linux_file_lock(const string &filePath)
+{
+    struct flock lock{};
+    int res, fd = open(filePath.c_str(), O_RDWR | O_CREAT, 0777);
+    if (fd > 0)
+    {
+        // 独占锁
+        lock.l_type = F_WRLCK;
+        lock.l_whence = SEEK_SET;
+        lock.l_start = 0;
+        lock.l_len = 0;
+        lock.l_pid = getpid();
+        res = fcntl(fd, F_SETLK, &lock);
+        printf("return value of fcntl=%d \n", res);
+        sleep(10);
+        cout << "程序退出" << endl;
+    }
+}
+
+/**
+ * 文件-内存映射
+ * @param filePath
+ */
+void linux_file_map(const string &filePath)
+{
+
 }
