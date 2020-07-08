@@ -10,7 +10,8 @@ add_executable(code4cpp
         ch01/ch01.h ch01/ch01.cpp ch01/demo.cpp ch01/sync.cpp
         ch02/ch02.h ch02/ch02.cpp ch02/base_c++.cpp ch02/read.cpp ch02/fd.cpp
         ch03/ch03.h ch03/ch03.cpp
-        ch04/ch04.h ch04/ch04.cpp ch04/mongo.cpp)
+        ch04/ch04.h ch04/ch04.cpp ch04/mongo.cpp
+        ch05/ch05.cpp ch05/ch05.h ch05/pid.cpp ch05/create.cpp)
 
 find_package(Threads REQUIRED)
 target_link_libraries(code4cpp Threads::Threads)

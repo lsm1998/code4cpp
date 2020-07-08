@@ -5,4 +5,6 @@ void ch01();
 
 void ch02();
 
+void ch05();
+
 #endif
