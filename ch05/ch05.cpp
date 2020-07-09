@@ -9,9 +9,13 @@ void pid_demo();
 
 void fork_demo();
 
+void exec_demo();
+
+void system_demo();
+
 void ch05()
 {
     cout << "hello " << endl;
 
-    fork_demo();
+    exec_demo();
 }
