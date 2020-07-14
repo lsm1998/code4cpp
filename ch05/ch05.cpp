@@ -11,11 +11,15 @@ void fork_demo();
 
 void exec_demo();
 
-void system_demo();
+int system_demo(const char *cmdString);
+
+void guardian();
 
 void ch05()
 {
     cout << "hello " << endl;
 
     exec_demo();
+
+    guardian();
 }
