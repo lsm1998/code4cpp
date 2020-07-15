@@ -7,4 +7,6 @@ void ch02();
 
 void ch05();
 
+void ch06();
+
 #endif
