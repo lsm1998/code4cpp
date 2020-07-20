@@ -5,6 +5,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    printf("Content-Type: text/html\n\n");
     cout << "Hello, World!" << endl;
     cout << "你" << "配" << "吗？" << endl;
     cout << 0xFF << endl;
@@ -12,6 +13,6 @@ int main(int argc, char *argv[])
     {
         cout << "参数 :" << i << " =" << argv[i] << endl;
     }
-    ch06();
+    ch07();
     return 0;
 }

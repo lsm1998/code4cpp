@@ -12,7 +12,8 @@ add_executable(code4cpp
         ch03/ch03.h ch03/ch03.cpp
         ch04/ch04.h ch04/ch04.cpp ch04/mongo.cpp
         ch05/ch05.cpp ch05/ch05.h ch05/pid.cpp ch05/create.cpp ch05/guardian.cpp
-        ch06/ch06.cpp ch06/ch06.h ch06/signal.cpp ch06/pipe.cpp)
+        ch06/ch06.cpp ch06/ch06.h ch06/signal.cpp ch06/pipe.cpp
+        ch07/ch07.cpp ch07/ch07.h)
 
 find_package(Threads REQUIRED)
 target_link_libraries(code4cpp Threads::Threads)
