@@ -1,8 +1,8 @@
 # Linux
 
-Windows只适合玩玩，真正做东西的还得是Linux
-
 环境使用远程的Linux，编码使用UTF8，关于clion远程环境配置：`https://encrt.com/2018/12/12/clion-远程编译调试/`
+
+安装drogon：`https://github.com/an-tao/drogon/wiki/02-安装`
 
 #### 编译器：gcc 4.8
 47.103.211.234
@@ -16,3 +16,4 @@ Windows只适合玩玩，真正做东西的还得是Linux
 5. ch05 多进程编程
 6. ch06 进程通信
 7. ch07 web编程
+8. ch08 常用类库使用

@@ -1,9 +1,13 @@
-cmake_minimum_required(VERSION 3.6.2)
+cmake_minimum_required(VERSION 3.18.0)
 project(code4cpp)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
-# add_compile_options("-std=c++17")
+set(INC_DIR /usr/local/include)
+set(LINK_DIR /usr/local/lib)
+
+include_directories(${INC_DIR})
+link_directories(${LINK_DIR})
 
 add_executable(code4cpp
         main.cpp main.h
@@ -13,7 +17,8 @@ add_executable(code4cpp
         ch04/ch04.h ch04/ch04.cpp ch04/mongo.cpp
         ch05/ch05.cpp ch05/ch05.h ch05/pid.cpp ch05/create.cpp ch05/guardian.cpp
         ch06/ch06.cpp ch06/ch06.h ch06/signal.cpp ch06/pipe.cpp
-        ch07/ch07.cpp ch07/ch07.h)
+        ch07/ch07.cpp ch07/ch07.h
+        ch08/ch08.cpp ch08/ch08.h ch08/json.cpp)
 
 find_package(Threads REQUIRED)
-target_link_libraries(code4cpp Threads::Threads)
+target_link_libraries(code4cpp Threads::Threads jsoncpp)
