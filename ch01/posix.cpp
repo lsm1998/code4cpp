@@ -66,5 +66,57 @@ void posix_demo2()
 
 void posix_demo3()
 {
+    pthread_t ti_dp;
+    pthread_attr_t thread_attr;
+    struct sched_param thread_param{};
+    size_t stack_size;
+    int res = pthread_attr_init(&thread_attr);
+    if (res)
+    {
+        cout << "pthread_attr_init failed" << endl;
+        return;
+    }
+    res = pthread_attr_setdetachstate(&thread_attr, PTHREAD_CREATE_DETACHED);
+    if (res)
+    {
+        cout << "pthread_attr_setdetachstate failed" << endl;
+        return;
+    }
+    res = pthread_create(&ti_dp, nullptr, thFunc3, nullptr);
+    if (res)
+    {
+        cout << "pthread_create error!" << endl;
+        return;
+    }
+    cout << "main exit" << endl;
+    sleep(1);
+}
 
+void posix_demo4()
+{
+    pthread_t ti_dp;
+    pthread_attr_t thread_attr;
+    struct sched_param thread_param{};
+    size_t stack_size;
+    int res = pthread_attr_init(&thread_attr);
+    if (res)
+    {
+        cout << "pthread_attr_init failed" << endl;
+        return;
+    }
+    res = pthread_attr_setdetachstate(&thread_attr, PTHREAD_CREATE_DETACHED);
+    if (res)
+    {
+        cout << "pthread_attr_setdetachstate failed" << endl;
+        return;
+    }
+    res = pthread_create(&ti_dp, nullptr, thFunc3, nullptr);
+    if (res)
+    {
+        cout << "pthread_create error!" << endl;
+        return;
+    }
+    cout << "主线程退出" << endl;
+    pthread_exit(nullptr);
+    cout << "不会执行" << endl;
 }

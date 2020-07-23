@@ -92,3 +92,46 @@ void std_thread()
     mut->lock();
     mut->unlock();
 }
+
+volatile int count(0);
+
+mutex mtx;
+
+void add_func()
+{
+    for (int i = 0; i < 10000; ++i)
+    {
+        mtx.lock();
+        ++count;
+        mtx.unlock();
+    }
+}
+
+void add_func1()
+{
+    for (int i = 0; i < 10000; ++i)
+    {
+        if (mtx.try_lock())
+        {
+            ++count;
+            mtx.unlock();
+        } else
+        {
+            cout << "try lock false" << endl;
+        }
+    }
+}
+
+void sync_add_demo()
+{
+    thread threads[10];
+    for (auto & i : threads)
+    {
+        i = thread(add_func1);
+    }
+    for (auto &th:threads)
+    {
+        th.join();
+    }
+    cout << "count to " << count << " successfully" << endl;
+}

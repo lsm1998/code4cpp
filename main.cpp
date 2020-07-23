@@ -13,6 +13,6 @@ int main(int argc, char *argv[])
     {
         cout << "参数 :" << i << " =" << argv[i] << endl;
     }
-    ch01();
+    ch03();
     return 0;
 }

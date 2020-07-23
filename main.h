@@ -5,6 +5,8 @@ void ch01();
 
 void ch02();
 
+void ch03();
+
 void ch05();
 
 void ch06();

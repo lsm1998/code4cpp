@@ -11,4 +11,6 @@ void thread_sync();
 
 void std_thread();
 
+void sync_add_demo();
+
 #endif //CODE4CPP_CH01_H
