@@ -11,7 +11,7 @@ link_directories(${LINK_DIR})
 
 add_executable(code4cpp
         main.cpp main.h
-        ch01/ch01.h ch01/ch01.cpp ch01/demo.cpp ch01/sync.cpp ch01/pool.cpp ch01/posix.cpp ch01/pool.h
+        ch01/ch01.h ch01/ch01.cpp ch01/thread.cpp ch01/demo.cpp ch01/sync.cpp ch01/pool.cpp ch01/posix.cpp ch01/pool.h ch01/priority.cpp
         ch02/ch02.h ch02/ch02.cpp ch02/base_c++.cpp ch02/read.cpp ch02/fd.cpp
         ch03/ch03.h ch03/ch03.cpp ch03/socket.cpp ch03/ip.cpp ch03/tcp_client.cpp ch03/tcp_server.cpp
         ch04/ch04.h ch04/ch04.cpp ch04/mongo.cpp
@@ -21,4 +21,5 @@ add_executable(code4cpp
         ch08/ch08.cpp ch08/ch08.h ch08/json.cpp)
 
 find_package(Threads REQUIRED)
-target_link_libraries(code4cpp Threads::Threads jsoncpp)
+#target_link_libraries(code4cpp Threads::Threads jsoncpp)
+target_link_libraries(code4cpp Threads::Threads)

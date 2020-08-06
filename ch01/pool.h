@@ -26,8 +26,7 @@ public:
 
     void setData(void *data);
 
-    virtual ~CTask()
-    {}
+    virtual ~CTask() = 0;
 };
 
 class CThreadPool

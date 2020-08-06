@@ -37,9 +37,6 @@ void ch06()
 
     sem_demo();
 
-
-
-
     thread receive(msg_receive_demo);
     thread send(msg_send_demo);
     receive.detach();
