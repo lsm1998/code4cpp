@@ -93,7 +93,7 @@ void std_thread()
     mut->unlock();
 }
 
-volatile int count(0);
+volatile int count_number(0);
 
 mutex mtx;
 
@@ -102,7 +102,7 @@ void add_func()
     for (int i = 0; i < 10000; ++i)
     {
         mtx.lock();
-        ++count;
+        ++count_number;
         mtx.unlock();
     }
 }
@@ -113,7 +113,7 @@ void add_func1()
     {
         if (mtx.try_lock())
         {
-            ++count;
+            ++count_number;
             mtx.unlock();
         } else
         {
@@ -133,5 +133,5 @@ void sync_add_demo()
     {
         th.join();
     }
-    cout << "count to " << count << " successfully" << endl;
+    cout << "count to " << count_number << " successfully" << endl;
 }

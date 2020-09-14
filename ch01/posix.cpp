@@ -3,8 +3,8 @@
 * 时间：2020/7/21 0021-23:22
 * 作用：
 */
-#include <zconf.h>
 #include "ch01.h"
+#include <unistd.h>
 
 void *thFunc1(void *arg)
 {

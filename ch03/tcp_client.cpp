@@ -2,7 +2,7 @@
 #include <netinet/in.h>
 #include <strings.h>
 #include <arpa/inet.h>
-#include <zconf.h>
+#include <unistd.h>
 
 /*
 * 作者：刘时明

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18.0)
+cmake_minimum_required(VERSION 3.17.3)
 project(code4cpp)
 
 set(CMAKE_CXX_STANDARD 20)
