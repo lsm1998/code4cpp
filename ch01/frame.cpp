@@ -1,11 +1,11 @@
 /*
-* ×÷Õß£ºÁõÊ±Ã÷
-* Ê±¼ä£º2020/6/7-14:20
-* ×÷ÓÃ£º
+* ä½œè€…ï¼šåˆ˜æ—¶æ˜
+* æ—¶é—´ï¼š2020/6/7-14:20
+* ä½œç”¨ï¼š
 */
 #include "ch01.h"
 
-#define CLASSNAME "ÎÒµÄ´°¿ÚÀà"
+#define CLASSNAME "æˆ‘çš„çª—å£ç±»"
 
 LRESULT CALLBACK WindowProc(
         HWND hwnd,
@@ -19,20 +19,20 @@ void registerWnd(HINSTANCE hInstance);
 
 int frameDemo(HINSTANCE hInstance)
 {
-    // ¶¨Òå
+    // å®šä¹‰
     MSG msg;
     BOOL bRet;
 
     registerWnd(hInstance);
 
-    // ´´½¨´°¿Ú²¢ÏÔÊ¾´°¿Ú
+    // åˆ›å»ºçª—å£å¹¶æ˜¾ç¤ºçª—å£
     if (!InitInstance(hInstance, SW_SHOWNORMAL))
     {
         return FALSE;
     }
 
-    // ÏûÏ¢Ñ­»·
-    // »ñÈ¡ÊôÓÚ×Ô¼ºµÄÏûÏ¢²¢½øĞĞ·Ö·¢
+    // æ¶ˆæ¯å¾ªç¯
+    // è·å–å±äºè‡ªå·±çš„æ¶ˆæ¯å¹¶è¿›è¡Œåˆ†å‘
     while ((bRet = GetMessage(&msg, nullptr, 0, 0)) != 0)
     {
         if (bRet == -1)
@@ -51,36 +51,36 @@ int frameDemo(HINSTANCE hInstance)
 void registerWnd(HINSTANCE hInstance)
 {
     WNDCLASSEX WndCls;
-    // Ìî³ä½á¹¹ÌåÎª0
+    // å¡«å……ç»“æ„ä½“ä¸º0
     ZeroMemory(&WndCls, sizeof(WNDCLASSEX));
-    // cbSizeÊÇ½á¹¹Ìå´óĞ¡
+    // cbSizeæ˜¯ç»“æ„ä½“å¤§å°
     WndCls.cbSize = sizeof(WNDCLASSEX);
-    // lpfnWndProcÊÇ´°¿Ú¹ı³ÌµØÖ·
+    // lpfnWndProcæ˜¯çª—å£è¿‡ç¨‹åœ°å€
     WndCls.lpfnWndProc = WindowProc;
-    // hInstanceÊÇÊµÀı¾ä±ú
+    // hInstanceæ˜¯å®ä¾‹å¥æŸ„
     WndCls.hInstance = hInstance;
-    // lpszClassNameÊÇ´°¿ÚÀàÀàÃû
+    // lpszClassNameæ˜¯çª—å£ç±»ç±»å
     WndCls.lpszClassName = CLASSNAME;
-    // styleÊÇ´°¿ÚÀà·ç¸ñ
+    // styleæ˜¯çª—å£ç±»é£æ ¼
     WndCls.style = CS_HREDRAW | CS_VREDRAW;
-    // hbrBackgroundÊÇ´°¿ÚÀà±³¾°É«
+    // hbrBackgroundæ˜¯çª—å£ç±»èƒŒæ™¯è‰²
     WndCls.hbrBackground = (HBRUSH) COLOR_WINDOWFRAME + 1;
-    // hCursorÊÇÊó±ê¾ä±ú
+    // hCursoræ˜¯é¼ æ ‡å¥æŸ„
     WndCls.hCursor = LoadCursor(nullptr, IDC_ARROW);
-    // hIconÊÇÍ¼±ê¾ä±ú
+    // hIconæ˜¯å›¾æ ‡å¥æŸ„
     WndCls.hIcon = LoadIcon(nullptr, IDI_QUESTION);
-    // ÆäËû
+    // å…¶ä»–
     WndCls.cbClsExtra = 0;
     WndCls.cbWndExtra = 0;
     RegisterClassEx(&WndCls);
 }
 
 /**
- * ´¦ÀíÏûÏ¢µÄ´°¿Ú¹ı³Ì
- * @param hwnd ´°¿Ú¾ä±ú
- * @param uMsg ÏûÏ¢ÀàĞÍ
- * @param wParam ²ÎÊı1
- * @param lParam ²ÎÊı2
+ * å¤„ç†æ¶ˆæ¯çš„çª—å£è¿‡ç¨‹
+ * @param hwnd çª—å£å¥æŸ„
+ * @param uMsg æ¶ˆæ¯ç±»å‹
+ * @param wParam å‚æ•°1
+ * @param lParam å‚æ•°2
  * @return
  */
 LRESULT CALLBACK WindowProc(
@@ -92,7 +92,7 @@ LRESULT CALLBACK WindowProc(
     PAINTSTRUCT ps;
     HDC hDC;
     RECT rt;
-    const CHAR *pszDrawText = "ÄãºÃ°¡";
+    const CHAR *pszDrawText = "ä½ å¥½å•Š";
     switch (uMsg)
     {
         case WM_PAINT:
@@ -107,19 +107,19 @@ LRESULT CALLBACK WindowProc(
         }
         case WM_CLOSE:
         {
-            if (IDYES == MessageBox(hwnd,"ÊÇ·ñÍË³ö³ÌĞò", "MyFirstWin", MB_YESNO))
+            if (IDYES == MessageBox(hwnd,"æ˜¯å¦é€€å‡ºç¨‹åº", "MyFirstWin", MB_YESNO))
             {
-                cout << "ÍË³ö" << endl;
-                // ÍË³ö´°¿Ú
+                cout << "é€€å‡º" << endl;
+                // é€€å‡ºçª—å£
                 DestroyWindow(hwnd);
-                // ÍË³ö³ÌĞò
+                // é€€å‡ºç¨‹åº
                 PostQuitMessage(0);
             }
             break;
         }
         default:
         {
-            // Î´×Ô¶¨Òå´¦ÀíµÄ½»¸øÄ¬ÈÏ´°¿Ú¹ı³Ì
+            // æœªè‡ªå®šä¹‰å¤„ç†çš„äº¤ç»™é»˜è®¤çª—å£è¿‡ç¨‹
             return DefWindowProc(hwnd, uMsg, wParam, lParam);
         }
     }
@@ -129,7 +129,7 @@ LRESULT CALLBACK WindowProc(
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
     HWND hWnd;
-    // ´´½¨´°¿Ú
+    // åˆ›å»ºçª—å£
     hWnd = CreateWindowEx(WS_EX_CLIENTEDGE,
                           CLASSNAME,
                           "hello",
@@ -142,9 +142,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     {
         return FALSE;
     }
-    // ÏÔÊ¾´°¿Ú
+    // æ˜¾ç¤ºçª—å£
     ShowWindow(hWnd, nCmdShow);
-    // ¸üĞÂ´°¿Ú
+    // æ›´æ–°çª—å£
     UpdateWindow(hWnd);
     return TRUE;
 }

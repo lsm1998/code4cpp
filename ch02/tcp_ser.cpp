@@ -1,7 +1,7 @@
 /*
-* ×÷Õß£ºÁõÊ±Ã÷
-* Ê±¼ä£º2020/6/11-0:04
-* ×÷ÓÃ£º·þÎñ¶Ë
+* ä½œè€…ï¼šåˆ˜æ—¶æ˜Ž
+* æ—¶é—´ï¼š2020/6/11-0:04
+* ä½œç”¨ï¼šæœåŠ¡ç«¯
 */
 #include "ch02.h"
 
@@ -10,34 +10,34 @@ void tcpSocketServer()
     WSADATA wsaData;
     WSAStartup(MAKEWORD(2, 2), &wsaData);
 
-    // ´´½¨socket
+    // åˆ›å»ºsocket
     SOCKET severSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 
-    // Ö¸¶¨IPºÍ¶Ë¿Ú
+    // æŒ‡å®šIPå’Œç«¯å£
     struct sockaddr_in ServerAddr{};
     ServerAddr.sin_family = AF_INET;
     ServerAddr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
     ServerAddr.sin_port = htons(8848);
 
-    // socket°ó¶¨IP¶Ë¿Ú
+    // socketç»‘å®šIPç«¯å£
     bind(severSocket, (SOCKADDR *) &ServerAddr, sizeof(ServerAddr));
 
-    // ¶Ë¿Ú¼àÌý
+    // ç«¯å£ç›‘å¬
     listen(severSocket, SOMAXCONN);
 
     sockaddr_in ClientAddr{};
     int size = sizeof(ClientAddr);
 
-    printf("¿ªÊ¼¼àÌý... \n");
+    printf("å¼€å§‹ç›‘å¬... \n");
     SOCKET clientSocket = accept(severSocket, (SOCKADDR *) &ClientAddr, &size);
-    printf("Ò»¸ö¿Í»§¶ËÁ¬½Ó£¬IP=%s,port=%d \n", inet_ntoa(ClientAddr.sin_addr), ntohs(ClientAddr.sin_port));
+    printf("ä¸€ä¸ªå®¢æˆ·ç«¯è¿žæŽ¥ï¼ŒIP=%s,port=%d \n", inet_ntoa(ClientAddr.sin_addr), ntohs(ClientAddr.sin_port));
 
-    // ·¢ËÍÏûÏ¢
+    // å‘é€æ¶ˆæ¯
     char msg[MAXBYTE] = {0};
     lstrcpy(msg, "hello client!\r\n");
     send(clientSocket, msg, strlen(msg) + sizeof(char), 0);
 
-    // ½ÓÊÕÏûÏ¢
+    // æŽ¥æ”¶æ¶ˆæ¯
     recv(clientSocket, msg, MAXBYTE, 0);
     printf("client => %s \n", msg);
 

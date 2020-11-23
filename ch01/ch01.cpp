@@ -1,15 +1,16 @@
 /*
-* ×÷Õß£ºÁõÊ±Ã÷
-* Ê±¼ä£º2020/6/6-13:18
-* ×÷ÓÃ£º
+* ä½œè€…ï¼šåˆ˜æ—¶æ˜Ž
+* æ—¶é—´ï¼š2020/6/6-13:18
+* ä½œç”¨ï¼š
 */
 #include "ch01.h"
 
-void ch01(HINSTANCE hInstance,
-          HINSTANCE hPrevInstance,
-          LPSTR lpCmdLine,
-          int nCmdShow)
+int APIENTRY WinMain(_In_ HINSTANCE hInstance,
+    _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPWSTR    lpCmdLine,
+    _In_ int       nCmdShow)
 {
     // frameDemo(hInstance);
     keyBdDemo();
+    return 0;
 }

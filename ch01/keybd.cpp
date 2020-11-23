@@ -1,19 +1,19 @@
 /*
-* ×÷Õß£ºÁõÊ±Ã÷
-* Ê±¼ä£º2020/6/7-16:09
-* ×÷ÓÃ£º
+* ä½œè€…ï¼šåˆ˜æ—¶æ˜
+* æ—¶é—´ï¼š2020/6/7-16:09
+* ä½œç”¨ï¼š
 */
 #include <shlobj.h>
 #include <fstream>
 #include "ch01.h"
 
 /**
- * Ä£ÄâÒ»¸ö×Ô¶¯´ò×Ö³ÌĞò
+ * æ¨¡æ‹Ÿä¸€ä¸ªè‡ªåŠ¨æ‰“å­—ç¨‹åº
  */
 void keyBdDemo()
 {
     HWND hWnd=sendMsgBefore();
-    // ½«´°¿ÚÉèÎªÏµÍ³µÄÇ°Ì¨´°¿Ú
+    // å°†çª—å£è®¾ä¸ºç³»ç»Ÿçš„å‰å°çª—å£
     SetForegroundWindow(hWnd);
     SendMessage(hWnd, WM_SETTEXT, 0 , (LPARAM) "hello");
     keybd_event('I',0,0,0);
@@ -33,14 +33,14 @@ void keyBdDemo()
     ClientToScreen(hWnd,&pt);
 
     SetCursorPos(pt.x,pt.y);
-    // Ä£ÄâÊó±êÓÒ¼ü
+    // æ¨¡æ‹Ÿé¼ æ ‡å³é”®
     mouse_event(MOUSEEVENTF_RIGHTDOWN,0,0,0,0);
     Sleep(100);
     mouse_event(MOUSEEVENTF_RIGHTUP,0,0,0,0);
-    // È«Ñ¡A
+    // å…¨é€‰A
     keybd_event('A',0,0,0);
 
-    // ±£´æµ½×ÀÃæ
+    // ä¿å­˜åˆ°æ¡Œé¢
     char path[255];
     SHGetSpecialFolderPath(nullptr,path,CSIDL_DESKTOPDIRECTORY,0);
     strcat(path,"\\hello.txt");

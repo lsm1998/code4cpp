@@ -1,7 +1,7 @@
 /*
-* ×÷Õß£ºÁõÊ±Ã÷
-* Ê±¼ä£º2020/6/10-23:13
-* ×÷ÓÃ£º
+* ä½œè€…ï¼šåˆ˜æ—¶æ˜
+* æ—¶é—´ï¼š2020/6/10-23:13
+* ä½œç”¨ï¼š
 */
 #include "ch02.h"
 
@@ -11,29 +11,31 @@ void tcpSocketServer();
 
 void tcpSocketClient();
 
-void ch02()
-{
-    byteSeq();
-    tcpSocketServer();
-    tcpSocketClient();
-}
-
 void byteSeq()
 {
-    // Í¨¹ıÈ¡µÍµØÖ·µÄÖµÅĞ¶Ï´óĞ¡¶Ë
+    // é€šè¿‡å–ä½åœ°å€çš„å€¼åˆ¤æ–­å¤§å°ç«¯
     unsigned long num = 0x01020304;
-    // *(BYTE *) &num ¾ÍÊÇÈ¡numÇ°ËÄ¸ö×Ö½Ú
+    // *(BYTE *) &num å°±æ˜¯å–numå‰å››ä¸ªå­—èŠ‚
     if (*(BYTE *) &num == 0x04)
     {
-        printf("Ğ¡¶Ë \n");
+        printf("å°ç«¯ \n");
     } else
     {
-        printf("´ó¶Ë \n");
+        printf("å¤§ç«¯ \n");
     }
 
-    // htonsº¯Êı¿ÉÒÔ½«Ö÷»ú×Ö½ÚĞò×ª»»³ÉÍøÂç×Ö½ÚĞò
+    // htonså‡½æ•°å¯ä»¥å°†ä¸»æœºå­—èŠ‚åºè½¬æ¢æˆç½‘ç»œå­—èŠ‚åº
     u_short a = 101;
     printf("%d \n", htons(a));
     u_long b = 101;
     printf("%lu \n", ntohl(b));
+}
+
+int main()
+{
+    printf("hello\n");
+    byteSeq();
+    tcpSocketServer();
+    tcpSocketClient();
+    return 0;
 }

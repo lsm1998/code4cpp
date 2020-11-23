@@ -1,39 +1,39 @@
 /*
-* ×÷Õß£ºÁõÊ±Ã÷
-* Ê±¼ä£º2020/6/7-11:49
-* ×÷ÓÃ£º
+* ä½œè€…ï¼šåˆ˜æ—¶æ˜
+* æ—¶é—´ï¼š2020/6/7-11:49
+* ä½œç”¨ï¼š
 */
 #include "ch01.h"
 
 /**
- * SendMessage ·¢ËÍÏûÏ¢¸øÖ¸¶¨µÄ´°¿Ú¾ä±ú¶ÔÏó
- * param1 ´°¿Ú¾ä±ú
- * param2 ÏûÏ¢ÀàĞÍ
- * param3 ¸½¼Ó²ÎÊı1
- * param4 ¸½¼Ó²ÎÊı2
+ * SendMessage å‘é€æ¶ˆæ¯ç»™æŒ‡å®šçš„çª—å£å¥æŸ„å¯¹è±¡
+ * param1 çª—å£å¥æŸ„
+ * param2 æ¶ˆæ¯ç±»å‹
+ * param3 é™„åŠ å‚æ•°1
+ * param4 é™„åŠ å‚æ•°2
  */
 void sendMsgDemo()
 {
     HWND hWnd=sendMsgBefore();
-    string text("ÕâÊÇ²âÊÔÄÚÈİ");
-    // ÉèÖÃ±êÌâ
+    string text("è¿™æ˜¯æµ‹è¯•å†…å®¹");
+    // è®¾ç½®æ ‡é¢˜
     SendMessage(hWnd, WM_SETTEXT, 0, (LPARAM) text.c_str());
-    // »ñÈ¡±êÌâ
+    // è·å–æ ‡é¢˜
     char title[1024];
     SendMessageA(hWnd, WM_GETTEXT, 1024, (LPARAM)title);
     cout << "title=" << title << endl;
     Sleep(5*1000);
-    // ¹Ø±Õ
+    // å…³é—­
     SendMessage(hWnd, WM_CLOSE, 0, 0);
 }
 
 HWND sendMsgBefore()
 {
     WinExec("notepad.exe", SW_SHOW);
-    HWND hWnd = FindWindow("Notepad", "ÎŞ±êÌâ - ¼ÇÊÂ±¾");
+    HWND hWnd = FindWindow("Notepad", "æ— æ ‡é¢˜ - è®°äº‹æœ¬");
     if (hWnd == nullptr)
     {
-        MessageBox(nullptr, TEXT("Ã»ÓĞÕÒµ½¼ÇÊÂ±¾"), TEXT("ÌáÊ¾"), MB_OK);
+        MessageBox(nullptr, TEXT("æ²¡æœ‰æ‰¾åˆ°è®°äº‹æœ¬"), TEXT("æç¤º"), MB_OK);
         exit(0);
     }
     return hWnd;

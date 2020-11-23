@@ -1,37 +1,37 @@
 /*
-* ×÷Õß£ºÁõÊ±Ã÷
-* Ê±¼ä£º2020/6/7-11:19
-* ×÷ÓÃ£º
+* ä½œè€…ï¼šåˆ˜æ—¶æ˜
+* æ—¶é—´ï¼š2020/6/7-11:19
+* ä½œç”¨ï¼š
 */
 #include "ch01.h"
 
 /**
- * FindWindow»ù±¾Ê¹ÓÃ
+ * FindWindowåŸºæœ¬ä½¿ç”¨
  * @param className
  * @param title
  */
 void findWindowDemo(const char *className, const char *title)
 {
-    // »ñÈ¡×îÉÏ²ãµÄ´°¿Ú¾ä±ú¶ÔÏó£¬²ÎÊıÎªÀàÃû¡¢±êÌâÃû£¬ÆäÖĞÒ»¸ö¿ÉÒÔÎª¿Õ
+    // è·å–æœ€ä¸Šå±‚çš„çª—å£å¥æŸ„å¯¹è±¡ï¼Œå‚æ•°ä¸ºç±»åã€æ ‡é¢˜åï¼Œå…¶ä¸­ä¸€ä¸ªå¯ä»¥ä¸ºç©º
     HWND hWnd = FindWindow(className, title);
     if (hWnd != nullptr)
     {
-        MessageBox(nullptr, TEXT("ÕÒµ½ÁË"), TEXT("ÌáÊ¾"), MB_OK);
+        MessageBox(nullptr, TEXT("æ‰¾åˆ°äº†"), TEXT("æç¤º"), MB_OK);
     } else
     {
-        MessageBox(nullptr, TEXT("Ã»ÓĞÕÒµ½"), TEXT("ÌáÊ¾"), MB_OK);
+        MessageBox(nullptr, TEXT("æ²¡æœ‰æ‰¾åˆ°"), TEXT("æç¤º"), MB_OK);
         return;
     }
     for (int i = 0; i < 100; ++i)
     {
         POINT pt;
         pt.x = pt.y = 0;
-        // »ñÈ¡Î»ÖÃ
+        // è·å–ä½ç½®
         GetCursorPos(&pt);
         SetWindowPos(hWnd, nullptr, pt.x + 100, pt.y + 100, 0, 0, 1);
         Sleep(10);
     }
-    if (::MessageBox(nullptr, TEXT("È·¶¨¹Ø±ÕQQÂğ£¿"), TEXT("²Ù×÷ÌáÊ¾"), 1) == 1)
+    if (::MessageBox(nullptr, TEXT("ç¡®å®šå…³é—­QQå—ï¼Ÿ"), TEXT("æ“ä½œæç¤º"), 1) == 1)
     {
         ::SendMessageA(hWnd, WM_CLOSE, 0, 0);
     }
