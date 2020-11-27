@@ -20,9 +20,9 @@ const int kWriteEvent = 2;
 void setNonBlock(int fd)
 {
     int flags = fcntl(fd, F_GETFL, 0);
-    exit_if(flags < 0, "fcntl failed");
+    exit_if(flags < 0, "fcntl failed")
     int r = fcntl(fd, F_SETFL, flags | O_NONBLOCK);
-    exit_if(r < 0, "fcntl failed");
+    exit_if(r < 0, "fcntl failed")
 }
 
 void updateEvents(int efd, int fd, int events, bool modify)
@@ -132,9 +132,9 @@ int main()
     addr.sin_port = htons(port);
     addr.sin_addr.s_addr = INADDR_ANY;
     int r = ::bind(listen_fd, (struct sockaddr *) &addr, sizeof(struct sockaddr));
-    exit_if(r, "bind to 0.0.0.0:%d failed %d %s", port, errno, strerror(errno));
+    exit_if(r, "bind to 0.0.0.0:%d failed %d %s", port, errno, strerror(errno))
     r = listen(listen_fd, 20);
-    exit_if(r, "listen failed %d %s", errno, strerror(errno));
+    exit_if(r, "listen failed %d %s", errno, strerror(errno))
     printf("fd %d listening at %d\n", listen_fd, port);
     setNonBlock(listen_fd);
     updateEvents(epoll_fd, listen_fd, kReadEvent, false);
