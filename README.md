@@ -1,12 +1,4 @@
-# Linux
-
-环境使用远程的Linux，编码使用UTF8，关于clion远程环境配置：`https://encrt.com/2018/12/12/clion-远程编译调试/`
-
-安装drogon：`https://github.com/an-tao/drogon/wiki/02-安装`
-
-#### 编译器：gcc 4.8
-47.103.211.234
-47.113.117.251
+# Linux && Mac OS
 
 #### 目录说明
 1. ch01 多线程编程

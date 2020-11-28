@@ -7,10 +7,10 @@
 #include <arpa/inet.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cerrno>
+#include <cstring>
+#include <cstdlib>
 
 #define exit_if(r, ...) if(r) {printf(__VA_ARGS__); printf("error no: %d error msg %s\n", errno, strerror(errno)); exit(1);}
 
@@ -126,7 +126,7 @@ int main()
     exit_if(epoll_fd < 0, "epoll_create failed");
     int listen_fd = socket(AF_INET, SOCK_STREAM, 0);
     exit_if(listen_fd < 0, "socket failed");
-    struct sockaddr_in addr;
+    struct sockaddr_in addr{};
     memset(&addr, 0, sizeof addr);
     addr.sin_family = AF_INET;
     addr.sin_port = htons(port);
