@@ -8,7 +8,7 @@ void tcp_client();
 
 void tcp_server();
 
-void ch03()
+int main()
 {
     ip_demo();
 
@@ -18,4 +18,5 @@ void ch03()
     sleep(1);
     client.detach();
     sleep(60);
+    return 0;
 }
