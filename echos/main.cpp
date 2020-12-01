@@ -7,6 +7,7 @@
 
 int main()
 {
-    CConfig::getInstance();
+    CConfig &config = CConfig::getInstance();
+    config.load();
     return 0;
 }
