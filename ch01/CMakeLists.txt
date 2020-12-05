@@ -1,5 +1,5 @@
 project(ch01)
-add_executable(ch01 ch01.cpp ch01.h)
+add_executable(ch01 ch01.cpp ch01.h dir.cpp shell.cpp)
 
 project(time_server)
 add_executable(time_server time_server.cpp)

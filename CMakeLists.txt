@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(ch01)
 add_subdirectory(ch03)
+add_subdirectory(ch05)
+add_subdirectory(ch06)
 add_subdirectory(echos)
 add_subdirectory(kqueue)
 add_subdirectory(mysql)

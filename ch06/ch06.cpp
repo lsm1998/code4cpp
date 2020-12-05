@@ -23,7 +23,7 @@ void msg_receive_demo();
 
 void msg_send_demo();
 
-void ch06()
+int main()
 {
     // signal_kill_demo();
 
@@ -42,4 +42,5 @@ void ch06()
     receive.detach();
     send.detach();
     sleep(60);
+    return 0;
 }
