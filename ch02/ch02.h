@@ -9,4 +9,6 @@ void copy_fd();
 
 void create_file();
 
+void fd_demo();
+
 #endif //CODE4CPP_CH02_H

@@ -5,6 +5,6 @@
 
 int main()
 {
-    copy_fd();
+    fd_demo();
     return 0;
 }
