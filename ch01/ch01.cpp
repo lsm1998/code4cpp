@@ -16,5 +16,9 @@ int main()
         printf("大端 \n");
     }
     printf("%d \n", b);
+
+    show_dir((char*)"/etc");
+
+    shell();
     return 0;
 }

@@ -29,11 +29,7 @@ void tcp_server()
     s_add.sin_family = AF_INET;
     s_add.sin_addr.s_addr = htonl(INADDR_ANY);
     s_add.sin_port = htons(port);
-    if (bind(sfp, (struct sockaddr *) (&s_add), sizeof(struct sockaddr)) == -1)
-    {
-        cout << "bind fail,port=" << port << endl;
-        return;
-    }
+    bind(sfp, (struct sockaddr *) (&s_add), sizeof(struct sockaddr));
     if (listen(sfp, 5) == -1)
     {
         cout << "listen fail!" << endl;

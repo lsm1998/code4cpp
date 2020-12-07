@@ -7,6 +7,8 @@
 
 #include <cstdio>
 
-void pid_demo();
+void show_dir(char *path);
+
+void shell();
 
 #endif //CODE4CPP_CH01_H
