@@ -7,4 +7,6 @@
 
 #include <cstdio>
 
+void pid_demo();
+
 #endif //CODE4CPP_CH01_H
