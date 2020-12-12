@@ -66,7 +66,7 @@ void handleAccept(int efd, int fd)
 void handleRead(int efd, int fd)
 {
     char buf[4096];
-    int n = 0;
+    int n;
     while ((n = ::read(fd, buf, sizeof buf)) > 0)
     {
         printf("read %d bytes\n", n);
@@ -89,12 +89,12 @@ void handleWrite(int efd, int fd)
 
 void loop_once(int efd, int lfd, int wait_ms)
 {
-    struct timespec timeout;
+    struct timespec timeout{};
     timeout.tv_sec = wait_ms / 1000;
     timeout.tv_nsec = (wait_ms % 1000) * 1000 * 1000;
     const int kMaxEvents = 20;
     struct kevent activeEvs[kMaxEvents];
-    int n = kevent(efd, NULL, 0, activeEvs, kMaxEvents, &timeout);
+    int n = kevent(efd, nullptr, 0, activeEvs, kMaxEvents, &timeout);
     printf("epoll_wait return %d\n", n);
     for (int i = 0; i < n; i++)
     {
