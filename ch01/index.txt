@@ -1,8 +1,0 @@
-Windows应用程序都是基于消息机制处理的；
-
-FindWindow获取窗口句柄；
-    句柄概述：句柄是一个系统内部数据结构的引用，简单理解为应用资源的门把手；
-
-SendMessage、PostMessage发送消息；
-
-keybd_event键盘事件和mouse_event鼠标事件；
