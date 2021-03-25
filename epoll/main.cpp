@@ -3,14 +3,14 @@
 //
 #include "main.h"
 
-#define MAXLEN 1024
+#define MAX_LEN 1024
 #define SERV_PORT 8000
 #define MAX_OPEN_FD 1024
 
 int main(int argc, char *argv[])
 {
     int listen_fd, conn_fd, efd, ret;
-    char buf[MAXLEN];
+    char buf[MAX_LEN];
     struct sockaddr_in cli_addr{}, serv_addr{};
     socklen_t client = sizeof(cli_addr);
     struct epoll_event tep{}, ep[MAX_OPEN_FD];
@@ -28,11 +28,16 @@ int main(int argc, char *argv[])
     tep.data.fd = listen_fd;
     // 把监听socket 先添加到efd中
     ret = epoll_ctl(efd, EPOLL_CTL_ADD, listen_fd, &tep);
+    printf("epoll ctl,ret=%d\n",ret);
     // 循环等待
     while (true)
     {
         // 返回已就绪的epoll_event,-1表示阻塞,没有就绪的epoll_event,将一直等待
         size_t n_ready = epoll_wait(efd, ep, MAX_OPEN_FD, -1);
+        if(n_ready<0)
+        {
+            break;
+        }
         for (int i = 0; i < n_ready; ++i)
         {
             // 如果是新的连接,需要把新的socket添加到efd中
@@ -42,18 +47,19 @@ int main(int argc, char *argv[])
                 tep.events = EPOLLIN;
                 tep.data.fd = conn_fd;
                 ret = epoll_ctl(efd, EPOLL_CTL_ADD, conn_fd, &tep);
+                printf("join conn,ret=%d \n",ret);
             }
             // 否则,读取数据
             else
             {
                 conn_fd = ep[i].data.fd;
-                int bytes = read(conn_fd, buf, MAXLEN);
+                int bytes = read(conn_fd, buf, MAX_LEN);
                 // 客户端关闭连接
                 if (bytes == 0)
                 {
                     ret = epoll_ctl(efd, EPOLL_CTL_DEL, conn_fd, NULL);
                     close(conn_fd);
-                    printf("client[%d] closed\n", i);
+                    printf("client[%d] closed , ret=%d \n", i,ret);
                 } else
                 {
                     for (int j = 0; j < bytes; ++j)
